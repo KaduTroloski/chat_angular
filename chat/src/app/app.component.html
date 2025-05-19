@@ -1,0 +1,21 @@
+ <main id="chat_box">
+            <header>
+                <h3>Atendimento Online</h3>
+            </header>
+            <div class="messages_area">
+                <ul>
+                   <li *ngFor="let clientMessage of clientMessages" class="usuario">
+                        <h5>Você diz: </h5>
+                        <div>
+                            <h5>{{clientMessage}}</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="input_area">
+                <input type="text" 
+                name="messageText" 
+                [(ngModel)]="messageText" 
+                placeholder="Digite sua mensagem"/>
+                <button (click)="sendMessage()">Enviar</button>
+              <router-outlet />
